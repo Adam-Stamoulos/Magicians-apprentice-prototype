@@ -480,7 +480,7 @@ if (gdjs.GameCode.condition2IsTrue_0.val) {
 }
 
 
-};gdjs.GameCode.mapOfGDgdjs_46GameCode_46GDAprenticeObjects3Objects = Hashtable.newFrom({"Aprentice": gdjs.GameCode.GDAprenticeObjects3});gdjs.GameCode.mapOfGDgdjs_46GameCode_46GDBossCardObjects3Objects = Hashtable.newFrom({"BossCard": gdjs.GameCode.GDBossCardObjects3});gdjs.GameCode.eventsList4 = function(runtimeScene) {
+};gdjs.GameCode.mapOfGDgdjs_46GameCode_46GDAprenticeObjects3Objects = Hashtable.newFrom({"Aprentice": gdjs.GameCode.GDAprenticeObjects3});gdjs.GameCode.mapOfGDgdjs_46GameCode_46GDBossCardObjects3Objects = Hashtable.newFrom({"BossCard": gdjs.GameCode.GDBossCardObjects3});gdjs.GameCode.mapOfGDgdjs_46GameCode_46GDAprenticeObjects3Objects = Hashtable.newFrom({"Aprentice": gdjs.GameCode.GDAprenticeObjects3});gdjs.GameCode.mapOfGDgdjs_46GameCode_46GDMagicianBossObjects3Objects = Hashtable.newFrom({"MagicianBoss": gdjs.GameCode.GDMagicianBossObjects3});gdjs.GameCode.eventsList4 = function(runtimeScene) {
 
 {
 
@@ -985,6 +985,8 @@ if (gdjs.GameCode.condition1IsTrue_0.val) {
 gdjs.copyArray(runtimeScene.getObjects("Aprentice"), gdjs.GameCode.GDAprenticeObjects2);
 gdjs.GameCode.GDBossCardObjects2.length = 0;
 
+gdjs.GameCode.GDMagicianBossObjects2.length = 0;
+
 
 gdjs.GameCode.condition0IsTrue_0.val = false;
 gdjs.GameCode.condition1IsTrue_0.val = false;
@@ -1010,7 +1012,8 @@ for(var i = 0, k = 0, l = gdjs.GameCode.GDAprenticeObjects2.length;i<l;++i) {
 gdjs.GameCode.GDAprenticeObjects2.length = k;}if ( gdjs.GameCode.condition1IsTrue_0.val ) {
 {
 {gdjs.GameCode.conditionTrue_1 = gdjs.GameCode.condition2IsTrue_0;
-gdjs.GameCode.GDAprenticeObjects2_1final.length = 0;gdjs.GameCode.GDBossCardObjects2_1final.length = 0;gdjs.GameCode.condition0IsTrue_1.val = false;
+gdjs.GameCode.GDAprenticeObjects2_1final.length = 0;gdjs.GameCode.GDBossCardObjects2_1final.length = 0;gdjs.GameCode.GDMagicianBossObjects2_1final.length = 0;gdjs.GameCode.condition0IsTrue_1.val = false;
+gdjs.GameCode.condition1IsTrue_1.val = false;
 {
 gdjs.copyArray(gdjs.GameCode.GDAprenticeObjects2, gdjs.GameCode.GDAprenticeObjects3);
 
@@ -1029,8 +1032,26 @@ if( gdjs.GameCode.condition0IsTrue_1.val ) {
 }
 }
 {
+gdjs.copyArray(gdjs.GameCode.GDAprenticeObjects2, gdjs.GameCode.GDAprenticeObjects3);
+
+gdjs.copyArray(runtimeScene.getObjects("MagicianBoss"), gdjs.GameCode.GDMagicianBossObjects3);
+gdjs.GameCode.condition1IsTrue_1.val = gdjs.evtTools.object.hitBoxesCollisionTest(gdjs.GameCode.mapOfGDgdjs_46GameCode_46GDAprenticeObjects3Objects, gdjs.GameCode.mapOfGDgdjs_46GameCode_46GDMagicianBossObjects3Objects, false, runtimeScene, false);
+if( gdjs.GameCode.condition1IsTrue_1.val ) {
+    gdjs.GameCode.conditionTrue_1.val = true;
+    for(var j = 0, jLen = gdjs.GameCode.GDAprenticeObjects3.length;j<jLen;++j) {
+        if ( gdjs.GameCode.GDAprenticeObjects2_1final.indexOf(gdjs.GameCode.GDAprenticeObjects3[j]) === -1 )
+            gdjs.GameCode.GDAprenticeObjects2_1final.push(gdjs.GameCode.GDAprenticeObjects3[j]);
+    }
+    for(var j = 0, jLen = gdjs.GameCode.GDMagicianBossObjects3.length;j<jLen;++j) {
+        if ( gdjs.GameCode.GDMagicianBossObjects2_1final.indexOf(gdjs.GameCode.GDMagicianBossObjects3[j]) === -1 )
+            gdjs.GameCode.GDMagicianBossObjects2_1final.push(gdjs.GameCode.GDMagicianBossObjects3[j]);
+    }
+}
+}
+{
 gdjs.copyArray(gdjs.GameCode.GDAprenticeObjects2_1final, gdjs.GameCode.GDAprenticeObjects2);
 gdjs.copyArray(gdjs.GameCode.GDBossCardObjects2_1final, gdjs.GameCode.GDBossCardObjects2);
+gdjs.copyArray(gdjs.GameCode.GDMagicianBossObjects2_1final, gdjs.GameCode.GDMagicianBossObjects2);
 }
 }
 }if ( gdjs.GameCode.condition2IsTrue_0.val ) {
@@ -1052,9 +1073,6 @@ gdjs.copyArray(runtimeScene.getObjects("Health"), gdjs.GameCode.GDHealthObjects2
 }
 }{for(var i = 0, len = gdjs.GameCode.GDAprenticeObjects2.length ;i < len;++i) {
     gdjs.GameCode.GDAprenticeObjects2[i].getBehavior("Health").Hit(50, (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
-}
-}{for(var i = 0, len = gdjs.GameCode.GDAprenticeObjects2.length ;i < len;++i) {
-    gdjs.GameCode.GDAprenticeObjects2[i].getBehavior("PlatformerObject").ignoreDefaultControls(false);
 }
 }}
 
