@@ -234,7 +234,7 @@ gdjs.copyArray(gdjs.GameCode.GDCreateZoneObjects2, gdjs.GameCode.GDCreateZoneObj
 gdjs.GameCode.condition0IsTrue_0.val = false;
 {
 for(var i = 0, k = 0, l = gdjs.GameCode.GDCreateZoneObjects3.length;i<l;++i) {
-    if ( gdjs.GameCode.GDCreateZoneObjects3[i].getVariableNumber(gdjs.GameCode.GDCreateZoneObjects3[i].getVariables().getFromIndex(0)) < 14 ) {
+    if ( gdjs.GameCode.GDCreateZoneObjects3[i].getVariableNumber(gdjs.GameCode.GDCreateZoneObjects3[i].getVariables().getFromIndex(0)) < 34 ) {
         gdjs.GameCode.condition0IsTrue_0.val = true;
         gdjs.GameCode.GDCreateZoneObjects3[k] = gdjs.GameCode.GDCreateZoneObjects3[i];
         ++k;
@@ -245,6 +245,9 @@ gdjs.copyArray(gdjs.GameCode.GDBuildingsObjects2, gdjs.GameCode.GDBuildingsObjec
 
 {for(var i = 0, len = gdjs.GameCode.GDBuildingsObjects3.length ;i < len;++i) {
     gdjs.GameCode.GDBuildingsObjects3[i].returnVariable(gdjs.GameCode.GDBuildingsObjects3[i].getVariables().getFromIndex(0)).setNumber(gdjs.randomInRange(0, 3));
+}
+}{for(var i = 0, len = gdjs.GameCode.GDBuildingsObjects3.length ;i < len;++i) {
+    gdjs.GameCode.GDBuildingsObjects3[i].setY(218);
 }
 }
 { //Subevents
@@ -261,7 +264,7 @@ gdjs.GameCode.eventsList1(runtimeScene);} //End of subevents
 gdjs.GameCode.condition0IsTrue_0.val = false;
 {
 for(var i = 0, k = 0, l = gdjs.GameCode.GDCreateZoneObjects2.length;i<l;++i) {
-    if ( gdjs.GameCode.GDCreateZoneObjects2[i].getVariableNumber(gdjs.GameCode.GDCreateZoneObjects2[i].getVariables().getFromIndex(0)) >= 14 ) {
+    if ( gdjs.GameCode.GDCreateZoneObjects2[i].getVariableNumber(gdjs.GameCode.GDCreateZoneObjects2[i].getVariables().getFromIndex(0)) >= 34 ) {
         gdjs.GameCode.condition0IsTrue_0.val = true;
         gdjs.GameCode.GDCreateZoneObjects2[k] = gdjs.GameCode.GDCreateZoneObjects2[i];
         ++k;
@@ -341,7 +344,7 @@ gdjs.GameCode.condition0IsTrue_0.val = false;
 gdjs.GameCode.condition1IsTrue_0.val = false;
 {
 for(var i = 0, k = 0, l = gdjs.GameCode.GDCreateZoneObjects2.length;i<l;++i) {
-    if ( gdjs.GameCode.GDCreateZoneObjects2[i].getVariableNumber(gdjs.GameCode.GDCreateZoneObjects2[i].getVariables().getFromIndex(0)) >= 20 ) {
+    if ( gdjs.GameCode.GDCreateZoneObjects2[i].getVariableNumber(gdjs.GameCode.GDCreateZoneObjects2[i].getVariables().getFromIndex(0)) >= 40 ) {
         gdjs.GameCode.condition0IsTrue_0.val = true;
         gdjs.GameCode.GDCreateZoneObjects2[k] = gdjs.GameCode.GDCreateZoneObjects2[i];
         ++k;
@@ -995,7 +998,7 @@ for(var i = 0, k = 0, l = gdjs.GameCode.GDAprenticeObjects2.length;i<l;++i) {
 gdjs.GameCode.GDAprenticeObjects2.length = k;}if ( gdjs.GameCode.condition0IsTrue_0.val ) {
 {
 for(var i = 0, k = 0, l = gdjs.GameCode.GDAprenticeObjects2.length;i<l;++i) {
-    if ( gdjs.GameCode.GDAprenticeObjects2[i].getVariableNumber(gdjs.GameCode.GDAprenticeObjects2[i].getVariables().get("Invincible")) == 0 ) {
+    if ( gdjs.GameCode.GDAprenticeObjects2[i].getVariableNumber(gdjs.GameCode.GDAprenticeObjects2[i].getVariables().getFromIndex(1)) == 0 ) {
         gdjs.GameCode.condition1IsTrue_0.val = true;
         gdjs.GameCode.GDAprenticeObjects2[k] = gdjs.GameCode.GDAprenticeObjects2[i];
         ++k;
@@ -1815,7 +1818,11 @@ gdjs.GameCode.condition0IsTrue_0.val = false;
 {
 gdjs.GameCode.condition0IsTrue_0.val = gdjs.evtTools.input.isKeyPressed(runtimeScene, "i");
 }if (gdjs.GameCode.condition0IsTrue_0.val) {
+gdjs.copyArray(runtimeScene.getObjects("Aprentice"), gdjs.GameCode.GDAprenticeObjects1);
+{for(var i = 0, len = gdjs.GameCode.GDAprenticeObjects1.length ;i < len;++i) {
+    gdjs.GameCode.GDAprenticeObjects1[i].returnVariable(gdjs.GameCode.GDAprenticeObjects1[i].getVariables().getFromIndex(1)).setNumber(1 - (gdjs.RuntimeObject.getVariableNumber(gdjs.GameCode.GDAprenticeObjects1[i].getVariables().getFromIndex(1))));
 }
+}}
 
 }
 
@@ -1845,7 +1852,7 @@ gdjs.GameCode.condition0IsTrue_0.val = gdjs.evtTools.input.isKeyPressed(runtimeS
 }if (gdjs.GameCode.condition0IsTrue_0.val) {
 gdjs.copyArray(runtimeScene.getObjects("CreateZone"), gdjs.GameCode.GDCreateZoneObjects1);
 {for(var i = 0, len = gdjs.GameCode.GDCreateZoneObjects1.length ;i < len;++i) {
-    gdjs.GameCode.GDCreateZoneObjects1[i].returnVariable(gdjs.GameCode.GDCreateZoneObjects1[i].getVariables().getFromIndex(0)).setNumber(15);
+    gdjs.GameCode.GDCreateZoneObjects1[i].returnVariable(gdjs.GameCode.GDCreateZoneObjects1[i].getVariables().getFromIndex(0)).setNumber(35);
 }
 }}
 

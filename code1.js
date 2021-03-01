@@ -1250,7 +1250,7 @@ for(var i = 0, k = 0, l = gdjs.Behaviour_32TestsCode.GDAprenticeObjects1.length;
 gdjs.Behaviour_32TestsCode.GDAprenticeObjects1.length = k;}if ( gdjs.Behaviour_32TestsCode.condition0IsTrue_0.val ) {
 {
 for(var i = 0, k = 0, l = gdjs.Behaviour_32TestsCode.GDAprenticeObjects1.length;i<l;++i) {
-    if ( gdjs.Behaviour_32TestsCode.GDAprenticeObjects1[i].getVariableNumber(gdjs.Behaviour_32TestsCode.GDAprenticeObjects1[i].getVariables().get("Invincible")) == 0 ) {
+    if ( gdjs.Behaviour_32TestsCode.GDAprenticeObjects1[i].getVariableNumber(gdjs.Behaviour_32TestsCode.GDAprenticeObjects1[i].getVariables().getFromIndex(1)) == 0 ) {
         gdjs.Behaviour_32TestsCode.condition1IsTrue_0.val = true;
         gdjs.Behaviour_32TestsCode.GDAprenticeObjects1[k] = gdjs.Behaviour_32TestsCode.GDAprenticeObjects1[i];
         ++k;
@@ -1609,7 +1609,7 @@ gdjs.Behaviour_32TestsCode.condition1IsTrue_0.val = gdjs.evtTools.common.getVari
 if (gdjs.Behaviour_32TestsCode.condition1IsTrue_0.val) {
 gdjs.copyArray(runtimeScene.getObjects("Aprentice"), gdjs.Behaviour_32TestsCode.GDAprenticeObjects1);
 {for(var i = 0, len = gdjs.Behaviour_32TestsCode.GDAprenticeObjects1.length ;i < len;++i) {
-    gdjs.Behaviour_32TestsCode.GDAprenticeObjects1[i].returnVariable(gdjs.Behaviour_32TestsCode.GDAprenticeObjects1[i].getVariables().get("Invincible")).setNumber(1);
+    gdjs.Behaviour_32TestsCode.GDAprenticeObjects1[i].returnVariable(gdjs.Behaviour_32TestsCode.GDAprenticeObjects1[i].getVariables().getFromIndex(1)).setNumber(1);
 }
 }{gdjs.evtTools.camera.showLayer(runtimeScene, "DeveloperTools");
 }}
